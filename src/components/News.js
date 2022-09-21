@@ -49,7 +49,7 @@ export class News extends Component {
         this.setState({
             articles : parsedata.articles,
             totalResults : parsedata.totalResults,
-            loading:false,
+            loading:false
         });
     }
 
@@ -61,13 +61,13 @@ export class News extends Component {
         this.setState({ page : this.state.page + 1 });
         // console.log(this.state.page);
         let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=b53835da01ea4c359d42e683440cfe27&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
-        
+        this.setState({loading:true});
         let data = await fetch(url);
         let parsedata = await data.json();
         this.setState({
             articles : this.state.articles.concat(parsedata.articles),
             totalResults : parsedata.totalResults,
-            
+            loading:false
         });
         
     }
