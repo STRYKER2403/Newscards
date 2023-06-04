@@ -6,9 +6,9 @@ function NavBar(){
  
     return (
       <div>
-        <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark py-3 shadow-lg ">
         <div className="container-fluid">
-            <Link className="navbar-brand" to="/">NewsCards</Link>
+            <Link className="navbar-brand text-danger" to="/">NewsCards</Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
             </button>
@@ -17,11 +17,11 @@ function NavBar(){
                 <li className="nav-item">
                 <Link className="nav-link" aria-current="page" to="/">Home</Link>
                 </li> 
-                <li className="nav-item">
+                {/* <li className="nav-item">
                 <Link className="nav-link" to="/general">General</Link>
-                </li>
+                </li> */}
                 <li className="nav-item">
-                <Link className="nav-link" to="/business">Business</Link>
+                <Link className="nav-link " to="/business">Business</Link>
                 </li>
                 <li className="nav-item">
                 <Link className="nav-link" to="/entertainment">Entertainment</Link>

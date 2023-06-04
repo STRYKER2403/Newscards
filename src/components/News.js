@@ -46,32 +46,29 @@ function News(props){
         setarticles(articles.concat(parsedata.articles));
         settotalResults(parsedata.totalResults);
         setloading(false);
-        
     }
 
     return (
       <>
-        <h2 className='text-center ' style={{marginTop:"80px"}}>NewsCards - Top {capitalizeFirstLetter(props.category)} Headlines</h2>
-        
-        {loading && <Spinner/>}
-        
+      <div className='dark'>
         <InfiniteScroll
           dataLength={articles.length}
           next={fetchMoreData}
           hasMore={articles.length !== totalResults}  //define for how long news to be shown
           loader={loading && <Spinner/>}>
         <div className='container'>
-        
-            <div className='row my-3' >
+        <h2 className='text-center text-white' >NewsCards - Top {capitalizeFirstLetter(props.category)} Headlines</h2>
+        {loading && <Spinner/>}
+            <div className='row my-3'>
                 {articles.map((element)=>{
-                    return <div className='col-md-4' key = {element.url}>
+                    return <div className='col-md-4 ' key = {element.url}>
                     <NewsItem title = {element.title?element.title.slice(0,45):""} description = {element.description?element.description.slice(0,88):""} ImageUrl = {element.urlToImage} newsUrl = {element.url} author={element.author?element.author:"Unknown"} date = {element.publishedAt} source = {element.source.name}/>
                     </div>
                 })}
             </div>
         </div>
         </InfiniteScroll>
-      
+        </div>
       </>
     )
   

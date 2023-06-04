@@ -1,0 +1,11 @@
+.navbar-nav > li.nav-item > a:focus{
+    color: red;
+}
+
+h2{
+    margin-top: 100px;
+}
+
+.dark{
+    background-color: #000000;
+}

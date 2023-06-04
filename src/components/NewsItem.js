@@ -4,7 +4,7 @@ function NewsItem(props){
     let {title,description,ImageUrl,newsUrl,author,date,source} = props;
     return (
       <div>  
-        <div className="card my-3">
+        <div className="card my-3 text-white bg-dark">
         <div>  
         <span className="position-absolute badge rounded-pill bg-danger" style={{right:"0"}}>{source}</span>
         </div>
@@ -13,7 +13,7 @@ function NewsItem(props){
             <h5 className="card-title">{title}...</h5>
             <p className="card-text">{description}...</p>
             <p className="card-text"><small className="text-muted">By {author} on {new Date(date).toGMTString()}</small></p>
-            <a href={newsUrl} target = "_blank" rel="noreferrer" className="btn btn-dark btn-sm btn-primary">Read More</a>
+            <a href={newsUrl} target = "_blank" rel="noreferrer" className="btn btn-light btn-sm btn-primary">Read More</a>
         </div>
         </div>
       </div>
